@@ -1,0 +1,23 @@
+
+// BCD fibonacci
+
+.setup
+    CLR();;
+    RST(Y);;
+    RST(R1);;
+    STR(R1) SPT(@BCD0);;
+    INC(R2, R0);;
+
+.printChar      // this is a subroutine
+    // might need to stall here depending on how long BCD converter takes
+    RST(X) SPT(@BCD2);;
+    LOD(DS) SPT(@BCD1) RET();;
+    LOD(DS) SPT(@BCD0);;
+    LOD(DS);;
+
+.loop
+    ADD(R1, R2) SPT(@BCD0);;
+    STR(R1) RPT(+1) STL(.printChar);;
+
+    ADD(R2, R1) SPT(@BCD0);;
+    STR(R2) RPT(.loop) STL(.printChar);;

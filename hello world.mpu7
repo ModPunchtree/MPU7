@@ -1,0 +1,24 @@
+
+// Hello World!
+
+.setup
+    CLR();;
+    SETX(0);;   // coordinate 0, 0 is the bottom left of the screen
+    SETY(0);;
+    // might need to stall here depending on how long the screen takes to clear
+
+.print_Text
+    PRT('H');;  // note - the X register automatically increments after a print operation
+    PRT('e');;
+    PRT('l');;
+    PRT('l');;
+    PRT('o');;
+    PRT(' ');;
+    PRT('W');;
+    PRT('o');;
+    PRT('r');;
+    PRT('l');;
+    PRT('d');;
+    PRT('!');;
+
+HLT();;

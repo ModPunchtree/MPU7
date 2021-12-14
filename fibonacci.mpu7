@@ -1,0 +1,12 @@
+
+// 8 bit fibonacci
+
+.setup
+    RST(R1)                             ; ;
+    INC(R2, R0)                         ; ;
+
+.loop
+    ADD(R1, R2) FLG(CF)                 ; HLT;
+    ADD(R2, R1) JMP(.loop) FLG(CF)      ; HLT;
+    ADD(R1, R2) FLG(CF)                 ; HLT;
+    ADD(R2, R1) FLG(CF)                 ; HLT;
