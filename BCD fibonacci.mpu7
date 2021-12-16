@@ -17,7 +17,12 @@
 
 .loop
     ADD(R1, R2) SPT(@BCD0);;
-    STR(R1) RPT(+1) STL(.printChar);;
+    STR(R1) RPT(~+1) STL(.printChar);;
 
     ADD(R2, R1) SPT(@BCD0);;
     STR(R2) RPT(.loop) STL(.printChar);;
+
+/*
+this is a
+multiline comment
+*/
